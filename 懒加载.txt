@@ -1,0 +1,28 @@
+加载图片：
+1，npm  install vue-lazyload -S
+2.在main.js 中加：
+      1.import VueLazyload from 'vue-lazyload'
+
+      2.Vue.use(VueLazyload, {
+  	preLoad: 0.4,    //反应时间
+  	error: '../static/assets/logo.png',   //错误图
+  	loading: '../static/assets/logo2.png',  //懒加载图
+	});
+3.图片写法：
+ <img v-lazy="'../../../static/assets/img/yybimg/sq04.jpg'">
+加载组件：
+1.npm install @xunlei/vue-lazy-component -s
+2.import VueLazyComponent from '@xunlei/vue-lazy-component'
+  import Vue from 'vue'
+
+  Vue.use(VueLazyComponent) 
+3.<vue-lazy-component>
+  
+  <st-series-sohu/>  //需要加载的组件
+
+  <st-series-sohu-skeleton slot="skeleton"/>  //在加载之前展示的框架组件
+   //st-series-sohu-skeleton:框架组件名;
+   //slot="skeleton"  占位，固定写法;
+</vue-lazy-component>
+
+
